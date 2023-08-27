@@ -1,3 +1,5 @@
+<%# form_with helper method instantiates a form builder. %>
+<%# See more here https://guides.rubyonrails.org/getting_started.html#using-a-form-builder %>
 <%= form_with model: article do |form| %>
   <div>
     <%= form.label :title %><br>
@@ -10,6 +12,8 @@
   <div>
     <%= form.label :body %><br>
     <%= form.text_area :body %><br>
+    <%# full_messages_for method returns an array of user-friendly error messages %>
+    <%# If there are no errors for that attribute, the array will be empty %>
     <% article.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
     <% end %>

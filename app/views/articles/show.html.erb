@@ -4,6 +4,8 @@
 
 <ul>
   <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  <%# we use the data option to set the data-turbo-method and 
+  data-turbo-confirm HTML attributes of the "Destroy" link? %>
   <li><%= link_to "Destroy", article_path(@article), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
